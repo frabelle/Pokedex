@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PokeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="#006dcb"
+        app:layout_constraintTop_toBottomOf="@id/iv_pokemon"
+        tools:layout_editor_absoluteX="-26dp">
+
+        <ImageView
+            android:id="@+id/imgFrg"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/landscape"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#006dcb"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/iv_pokemon">
+
+            <TextView
+                android:id="@+id/namePokeFrg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pokemonname"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLove"
+                android:layout_width="57dp"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:clickable="true"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_baseline_favorite_border_24"
+                app:iconGravity="end"
+                app:iconSize="40dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dscpPokeFrg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/lorem"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExit"
+            android:background="#00FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cerrar"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

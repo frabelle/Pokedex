@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pokemones</string>
+    <string name="start">Empezar ahora</string>
+    <string name="nameapp">POKEDEX</string>
+    <string name="list">Lista</string>
+    <string name="pokemonname">Pokemón Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis tortor in lacus volutpat iaculis sagittis non est. Phasellus non bibendum nibh. Praesent vitae orci maximus, ultrices nunc non, mollis enim. Mauris est ex, venenatis a dui in, dignissim scelerisque odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus ornare purus vel congue.</string>
+    <string name="cerrar">Cerrar</string>
+</resources>
