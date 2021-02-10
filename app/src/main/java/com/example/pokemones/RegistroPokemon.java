@@ -1,5 +1,6 @@
 package com.example.pokemones;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -18,10 +19,14 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.pokemones.adapters.PokeAdapter;
+import com.example.pokemones.data.UserConfig;
 import com.example.pokemones.models.PokeModel;
+import com.example.pokemones.models.UserModel;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -35,10 +40,13 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
     private PokeAdapter pokeAdapter;
     private ViewGroup rootView;
     private Integer p;
+    public String username;
 
     Toolbar toolbar;
 
     MaterialButton btnLove;
+
+    public static final String FULLNAME_KEY = "FULLNAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +58,25 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
     public void SetUp() {
         SetUpViewLineal();
         rootView = findViewById(R.id.ly_root);
+
+        Intent startIntent = getIntent();
+        UserModel userModel = getUserModelFromSources(startIntent.getExtras());
+        username = userModel.getFullname();
+
+        getSupportActionBar().setTitle("Bienvenido, " + username);
+    }
+
+    @NonNull
+    private UserModel getUserModelFromSources(Bundle extras) {
+        UserConfig userConfig = new UserConfig(getApplicationContext());
+        final UserModel user = userConfig.getUser();
+        if(user != null) {
+            return user;
+        }
+        if(extras == null) {
+            throw new InvalidParameterException("Extras");
+        }
+        return new UserModel(extras.getString(FULLNAME_KEY));
     }
 
     @Override

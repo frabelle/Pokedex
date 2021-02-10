@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Intent() {
 
-        Intent intent = new Intent(this, RegistroPokemon.class);
+        Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
     }
 
