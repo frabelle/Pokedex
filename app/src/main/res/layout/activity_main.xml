@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo3"
+    android:background="@drawable/landscape"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_vertical"
-        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintVertical_bias="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/Logo"
-            android:layout_width="wrap_content"
-            android:layout_height="400sp"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             android:src="@drawable/logo"
             />
 
@@ -33,7 +33,7 @@
             android:text="@string/start"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:backgroundTint="@color/PrimaryBlue"
             android:layout_gravity="center_horizontal"/>
 

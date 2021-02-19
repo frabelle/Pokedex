@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pokemones</string>
+    <string name="app_name">Pokedex</string>
     <string name="start">Empezar ahora</string>
     <string name="nameapp">POKEDEX</string>
     <string name="list">Lista</string>
@@ -9,4 +9,5 @@
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis tortor in lacus volutpat iaculis sagittis non est. Phasellus non bibendum nibh. Praesent vitae orci maximus, ultrices nunc non, mollis enim. Mauris est ex, venenatis a dui in, dignissim scelerisque odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus ornare purus vel congue.</string>
     <string name="cerrar">Cerrar</string>
     <string name="getName">¿Cómo te gustaría que te llamemos?</string>
+    <string name="firsttime_dscp">¡Bienvenido! En está Pokedex podrás conocer un poco más sobre tus pokemones favoritos</string>
 </resources>

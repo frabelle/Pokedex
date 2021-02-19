@@ -1,6 +1,7 @@
 package com.example.pokemones;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent();
+                SaveUser();
             }
         });
     }
 
-    private void Intent() {
+    private void SaveUser() {
 
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
+        FirstTimeFragment DialogFrg = new FirstTimeFragment();
+        DialogFrg.show(getSupportFragmentManager(), "Username");
     }
 
     private void showMsg(){

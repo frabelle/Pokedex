@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
         if (userConfig.userExists()) {
             intent = new Intent(getBaseContext(),  RegistroPokemon.class);
         }else{
-            intent = new Intent(getBaseContext(), FirstTime.class);
+            intent = new Intent(getBaseContext(), MainActivity.class);
         }
 
         startActivity(intent);
