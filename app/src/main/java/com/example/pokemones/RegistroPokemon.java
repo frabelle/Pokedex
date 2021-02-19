@@ -115,16 +115,16 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
 
     public List<PokeModel> getPokemons(){
         List<PokeModel> pokemon = new ArrayList<>();
-        pokemon.add(new PokeModel("1", "Chikorita", "Descripcion1",R.drawable.chikorita, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("2", "Bulbasaur", "Descripcion2",R.drawable.bulbasaur, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("3", "Squirtle", "Descripcion3",R.drawable.squirtle, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("4", "Raichu", "Descripcion4",R.drawable.raichu, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("5", "Vulpix", "Descripcion5",R.drawable.vulpix, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("6", "Meowth", "Descripcion6",R.drawable.meowth, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("7", "Psyduck", "Descripcion7",R.drawable.psyduck, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("8", "Ponyta", "Descripcion8",R.drawable.ponyta, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("9", "Seel", "Descripcion9",R.drawable.seel, R.drawable.ic_baseline_favorite_border_24));
-        pokemon.add(new PokeModel("10", "Chansey", "Descripcion10",R.drawable.chansey, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("1", "Chikorita", getString(R.string.chikorita),R.drawable.chikorita, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("2", "Bulbasaur", getString(R.string.bulbasaur),R.drawable.bulbasaur, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("3", "Squirtle", getString(R.string.squirtle),R.drawable.squirtle, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("4", "Raichu", getString(R.string.raichu),R.drawable.raichu, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("5", "Vulpix", getString(R.string.vulpix),R.drawable.vulpix, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("6", "Meowth", getString(R.string.meowth),R.drawable.meowth, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("7", "Psyduck", getString(R.string.psyduck),R.drawable.psyduck, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("8", "Ponyta", getString(R.string.ponyta),R.drawable.ponyta, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("9", "Seel", getString(R.string.seel),R.drawable.seel, R.drawable.ic_baseline_favorite_border_24));
+        pokemon.add(new PokeModel("10", "Chansey", getString(R.string.chansey),R.drawable.chansey, R.drawable.ic_baseline_favorite_border_24));
 
         mModelList = pokemon;
 
@@ -138,13 +138,14 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
 
     private void showFragmentPokemon(int position) {
 
-        PokeModel selectedItemModel = mModelList.get(position);
+        PokeModel data = mModelList.get(position);
         Snackbar.make(rootView,
-                "Has seleccionado a  " + selectedItemModel.getName(),
+                "Has seleccionado a " + data.getName(),
                 Snackbar.LENGTH_LONG
         ).show();
 
-        PokeFragment DialogFrg = new PokeFragment();
+        PokeFragment DialogFrg = new PokeFragment(data);
+        //PokeFragment.newInstance(data);
         DialogFrg.show(getSupportFragmentManager(), "Pokemon");
 
     }

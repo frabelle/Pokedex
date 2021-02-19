@@ -16,16 +16,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.pokemones.models.PokeModel;
 import com.google.android.material.button.MaterialButton;
 
-public class PokeFragment extends DialogFragment {
+import java.util.List;
+
+public class PokeFragment extends DialogFragment implements ItemTapListener {
 
     MaterialButton exit;
     private TextView Nombre, Descripcion;
     private ImageView Pokemon;
+    PokeModel model;
 
-    public PokeFragment() {
-        // Required empty public constructor
+    public PokeFragment(PokeModel data) {
+        model = data;
     }
 
     @NonNull
@@ -44,6 +48,10 @@ public class PokeFragment extends DialogFragment {
         Nombre = v.findViewById(R.id.namePokeFrg);
         Descripcion = v.findViewById(R.id.dscpPokeFrg);
         Pokemon = v.findViewById(R.id.imgFrg);
+
+        Nombre.setText(model.getName());
+        Pokemon.setImageResource(model.getImg());
+        Descripcion.setText(model.getDescription());
 
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +73,11 @@ public class PokeFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_poke, container, false);
+    }
+
+    @Override
+    public void onItemTap(View v, int position) {
+
+
     }
 }

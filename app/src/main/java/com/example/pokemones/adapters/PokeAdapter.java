@@ -47,7 +47,6 @@ public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
         PokeModel currentModel = mModelList.get(position);
         holder.name.setText(currentModel.getName());
         holder.img.setImageResource(currentModel.getImg());
-
     }
 
     @Override
