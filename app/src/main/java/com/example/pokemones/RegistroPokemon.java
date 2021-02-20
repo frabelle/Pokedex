@@ -37,7 +37,6 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
     private RecyclerView rvPokemon;
     private PokeAdapter pokeAdapter;
     private ViewGroup rootView;
-    private Integer p;
     public String username;
 
     MaterialButton btnLove;

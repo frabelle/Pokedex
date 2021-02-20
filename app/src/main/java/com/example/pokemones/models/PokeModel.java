@@ -22,13 +22,6 @@ public class PokeModel {
         this.fav = fav;
     }
 
-    public PokeModel(String id, String name, String description, int img) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.img = img;
-    }
-
     public String getName() {
         return name;
     }

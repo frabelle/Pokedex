@@ -23,6 +23,8 @@ import java.util.List;
 public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
 
     List<PokeModel> mModelList;
+    PokeModel p;
+
     @Nullable
     private final ItemTapListener mTapListener;
 
@@ -45,6 +47,7 @@ public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull PokeViewHolder holder, int position) {
         PokeModel currentModel = mModelList.get(position);
+        p = currentModel;
         holder.name.setText(currentModel.getName());
         holder.img.setImageResource(currentModel.getImg());
     }
@@ -66,23 +69,6 @@ public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
             name = itemView.findViewById(R.id.namePoke);
             img = itemView.findViewById(R.id.iv_pokemon);
             love = itemView.findViewById(R.id.btnLove);
-
-            love.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    PokeModel PokeItem = mModelList.get(position);
-
-                    if(PokeItem.getFav() == R.drawable.ic_baseline_favorite_border_24){
-                        PokeItem.setFav(R.drawable.ic_baseline_favorite_24);
-                        Log.d("1", "FAVS");
-                        love.setIconResource(R.drawable.ic_baseline_favorite_24);
-                    } else {
-                        love.setIconResource(R.drawable.ic_baseline_favorite_24);
-                    }
-
-                }
-            });
 
         }
     }
