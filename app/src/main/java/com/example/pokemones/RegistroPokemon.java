@@ -34,17 +34,15 @@ import java.util.Locale;
 public class RegistroPokemon extends AppCompatActivity implements ItemTapListener{
 
     private List<PokeModel> mModelList;
-    private PokeAdapter mPokesAdapter;
-
     private RecyclerView rvPokemon;
     private PokeAdapter pokeAdapter;
     private ViewGroup rootView;
     private Integer p;
     public String username;
 
-    Toolbar toolbar;
-
     MaterialButton btnLove;
+
+    String id = "Grid";
 
     public static final String FULLNAME_KEY = "FULLNAME";
 
@@ -63,7 +61,7 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
         UserModel userModel = getUserModelFromSources(startIntent.getExtras());
         username = userModel.getFullname();
 
-        getSupportActionBar().setTitle("Bienvenido, " + username);
+        getSupportActionBar().setTitle("¡Hola de nuevo, " + username + "!");
     }
 
     @NonNull
@@ -88,11 +86,13 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-
-        if (id == R.id.square) {
+        if (id.contentEquals("Grid")) {
+            id = "Lineal";
+            item.setIcon(R.drawable.menulist);
             SetUpViewGrid();
         } else {
+            id = "Grid";
+            item.setIcon(R.drawable.menusquare);
             SetUpViewLineal();
         }
 

@@ -3,14 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Lista"
-        android:id="@+id/lista"
-        android:icon="@drawable/menulist"
-        app:showAsAction="always"/>
-
-    <item
-        android:title="Lista"
-        android:id="@+id/square"
+        android:title="Icon"
+        android:id="@+id/menu"
         android:icon="@drawable/menusquare"
         app:showAsAction="always"/>
 
