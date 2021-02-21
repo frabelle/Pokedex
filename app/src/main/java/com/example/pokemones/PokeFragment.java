@@ -23,7 +23,7 @@ import java.util.List;
 
 public class PokeFragment extends DialogFragment implements ItemTapListener {
 
-    MaterialButton exit;
+    MaterialButton exit, love;
     private TextView Nombre, Descripcion;
     private ImageView Pokemon;
     PokeModel model;
@@ -48,10 +48,12 @@ public class PokeFragment extends DialogFragment implements ItemTapListener {
         Nombre = v.findViewById(R.id.namePokeFrg);
         Descripcion = v.findViewById(R.id.dscpPokeFrg);
         Pokemon = v.findViewById(R.id.imgFrg);
+        love = v.findViewById(R.id.btnLove);
 
         Nombre.setText(model.getName());
         Pokemon.setImageResource(model.getImg());
         Descripcion.setText(model.getDescription());
+        love.setIconResource(model.getFav());
 
         exit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -149,14 +149,4 @@ public class RegistroPokemon extends AppCompatActivity implements ItemTapListene
 
     }
 
-    public void LoveIt(View view){
-        Snackbar.make(rootView,
-                "Has marcado como favorito a este pokemon!",
-                Snackbar.LENGTH_LONG
-        ).show();
-
-        btnLove = findViewById(view.getId());
-        btnLove.setIconResource(R.drawable.ic_baseline_favorite_24);
-    }
-
 }

@@ -17,13 +17,17 @@ import com.example.pokemones.R;
 import com.example.pokemones.adapters.viewholders.PokeViewHolder;
 import com.example.pokemones.models.PokeModel;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
 public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
 
+    public static final int unlove = R.drawable.ic_baseline_favorite_border_24;
+    public static final int loveit = R.drawable.ic_baseline_favorite_24;
+
     List<PokeModel> mModelList;
-    PokeModel p;
+    private ViewGroup rootView;
 
     @Nullable
     private final ItemTapListener mTapListener;
@@ -47,9 +51,27 @@ public class PokeAdapter extends RecyclerView.Adapter<PokeViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull PokeViewHolder holder, int position) {
         PokeModel currentModel = mModelList.get(position);
-        p = currentModel;
         holder.name.setText(currentModel.getName());
         holder.img.setImageResource(currentModel.getImg());
+
+        holder.love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int flag = currentModel.getFav();
+
+                if(flag == unlove){
+                    holder.love.setIconResource(loveit);
+                    currentModel.setFav(loveit);
+
+                }else{
+                    holder.love.setIconResource(unlove);
+                    currentModel.setFav(unlove);
+
+                }
+
+            }
+        });
     }
 
     @Override

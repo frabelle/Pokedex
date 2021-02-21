@@ -21,9 +21,6 @@ import java.util.List;
 
 public class PokeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public static final int unlove = R.drawable.ic_baseline_favorite_border_24;
-    public static final int loveit = R.drawable.ic_baseline_favorite_24;
-
     List<PokeModel> item;
     PokeModel data;
     public TextView name, descp;
@@ -42,23 +39,6 @@ public class PokeViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         name = itemView.findViewById(R.id.namePoke);
         img = itemView.findViewById(R.id.iv_pokemon);
         love = itemView.findViewById(R.id.btnLove);
-
-        love.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //data = item.get(getAdapterPosition());
-
-                int flag = unlove;
-
-                if(flag == unlove){
-                    love.setIconResource(loveit);
-                }else{
-                    love.setIconResource(unlove);
-                }
-
-            }
-        });
     }
 
 
