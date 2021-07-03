@@ -1,7 +1,7 @@
-# Pokedex
+# Pokédex
 
 ## Descripción
-🏋️‍♀ **Attentip** es una aplicación para dispositivos android que muestra ejercicios para realizar en una pausa activa. Se clasifican en ejercicios fisicos y en ejercicios mentales.
+🕹 **Pokédex** es una aplicación para dispositivos android inspirada en Pokémon. Muestra la información de 10 pokemones.
 
 ## Características
 * Fragments
